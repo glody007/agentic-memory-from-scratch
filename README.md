@@ -1,5 +1,8 @@
 # Agentic  Memory System
 
+![Agentic Memory System Architecture](./memory-arch.png)
+
+
 > **Inspired by Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory**
 
 This repository demonstrates an agentic memory system implementation based on the research from [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/pdf/2504.19413). The system provides scalable, long-term memory capabilities for AI agents with intelligent fact extraction, semantic search, and memory consolidation.
