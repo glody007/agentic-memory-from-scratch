@@ -5,6 +5,7 @@
  * This implements the core storage operations needed for memory management.
  */
 
+import 'dotenv/config';
 import { QdrantClient } from '@qdrant/js-client-rest';
 import { embed } from 'ai';
 import { openai } from '@ai-sdk/openai';

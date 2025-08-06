@@ -100,7 +100,7 @@ export class AgenticMemory {
    */
   private async extractFacts(input: string): Promise<string[]> {
     const { object } = await generateObject({
-      model: openai('gpt-4'),
+      model: openai('gpt-4.1'),
       prompt: `
         Extract factual information from this input. Focus on:
         - Personal preferences and characteristics
@@ -156,7 +156,7 @@ export class AgenticMemory {
     }));
 
     const { object } = await generateObject({
-      model: openai('gpt-4'),
+      model: openai('gpt-4.1'),
       prompt: `
         Compare new facts with existing memories and determine actions:
         

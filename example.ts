@@ -5,8 +5,7 @@
  * including storage operations, memory consolidation, and advanced features.
  */
 
-import { AgenticMemory, createAgenticMemory, createCustomAgenticMemory } from './implementation';
-import { MemoryStorage, createMemoryStorage, defaultStorageConfig } from './storage';
+import { createAgenticMemory } from './implementation';
 
 // Example user data
 const USER_ID = 'user123';
@@ -22,7 +21,7 @@ async function basicMemoryExample() {
 
   // Add initial memories
   await memory.add(
-    "I'm a software engineer at Google and I prefer TypeScript for development",
+    "I'm a software engineer at Akieni and I prefer TypeScript for development",
     CONTEXT
   );
 
@@ -74,112 +73,15 @@ async function memoryConsolidationExample() {
 }
 
 /**
- * Advanced Storage Operations Example
- */
-async function advancedStorageExample() {
-  console.log('\n=== Advanced Storage Operations ===');
-  
-  const memory = await createAgenticMemory();
-
-  // Add memories with timestamps
-  const now = Date.now();
-  const oneDayAgo = now - (24 * 60 * 60 * 1000);
-  const twoDaysAgo = now - (2 * 24 * 60 * 60 * 1000);
-
-  await memory.add(
-    "I completed the React project yesterday",
-    { userId: USER_ID, timestamp: oneDayAgo }
-  );
-
-  await memory.add(
-    "I started learning Python for data analysis",
-    { userId: USER_ID, timestamp: twoDaysAgo }
-  );
-
-  await memory.add(
-    "I'm feeling better today after recovering from a cold",
-    CONTEXT
-  );
-
-  // Get memories by date range
-  const recentMemories = await memory.getMemoriesByDateRange(
-    USER_ID,
-    oneDayAgo,
-    now,
-    10
-  );
-  console.log('Recent memories:', recentMemories.map(m => ({
-    content: m.content,
-    timestamp: new Date(m.metadata.timestamp).toISOString()
-  })));
-
-  // Get specific memory and update it
-  if (recentMemories.length > 0) {
-    const memoryId = recentMemories[0].id;
-    const originalMemory = await memory.get(memoryId);
-    console.log('Original memory:', originalMemory?.content);
-
-    await memory.update(memoryId, "I completed the React project and deployed it to production");
-    
-    const updatedMemory = await memory.get(memoryId);
-    console.log('Updated memory:', updatedMemory?.content);
-  }
-}
-
-/**
- * Error Handling Example
- */
-async function errorHandlingExample() {
-  console.log('\n=== Error Handling Example ===');
-  
-  try {
-    // Create memory with invalid configuration
-    const invalidConfig = {
-      url: 'http://invalid-url:6333',
-      collectionName: 'test_memory',
-    };
-
-    const storage = createMemoryStorage(invalidConfig);
-    await storage.initialize(); // This should fail
-  } catch (error) {
-    console.log('Expected error caught:', error instanceof Error ? error.message : error);
-  }
-
-  // Test with valid configuration
-  const memory = await createAgenticMemory();
-}
-
-/**
- * Custom Configuration Example
- */
-async function customConfigurationExample() {
-  console.log('\n=== Custom Configuration Example ===');
-  
-  // Create memory with custom configuration
-  const customMemory = await createCustomAgenticMemory();
-  
-  await customMemory.add(
-    "This is stored in a custom memory collection",
-    CONTEXT
-  );
-
-  const results = await customMemory.search("custom", CONTEXT);
-  console.log('Custom collection results:', results.map(r => r.content));
-}
-
-/**
  * Main example runner
  */
 async function runExamples() {
   try {
-    console.log('🧠 Agentic Memory System Examples');
+    console.log('Agentic Memory System Examples');
     console.log('=====================================\n');
 
     await basicMemoryExample();
     await memoryConsolidationExample();
-    await advancedStorageExample();
-    await errorHandlingExample();
-    await customConfigurationExample();
 
     console.log('\n✅ All examples completed successfully!');
   } catch (error) {
@@ -191,12 +93,3 @@ async function runExamples() {
 if (require.main === module) {
   runExamples().catch(console.error);
 }
-
-export {
-  runExamples,
-  basicMemoryExample,
-  memoryConsolidationExample,
-  advancedStorageExample,
-  errorHandlingExample,
-  customConfigurationExample,
-}; 
