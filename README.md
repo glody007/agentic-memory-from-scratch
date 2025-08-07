@@ -3,9 +3,9 @@
 ![Agentic Memory System Architecture](./memory-arch.png)
 
 
-> **Inspired by Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory**
+> **Inspired by Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory and Mem0 repo**
 
-This repository demonstrates an agentic memory system implementation based on the research from [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/pdf/2504.19413). The system provides scalable, long-term memory capabilities for AI agents with intelligent fact extraction, semantic search, and memory consolidation.
+This educational repository demonstrates an agentic memory system implementation based on the research from [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/pdf/2504.19413). The system provides scalable, long-term memory capabilities for AI agents with intelligent fact extraction, semantic search, and memory consolidation.
 
 ## Core Architecture
 
@@ -162,9 +162,13 @@ Run the examples:
 npm run dev
 ```
 
-
 ## References
 
 - [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/pdf/2504.19413)
 - [Qdrant Vector Database](https://qdrant.tech/)
 - [OpenAI Embeddings](https://platform.openai.com/docs/guides/embeddings)
+
+## Credit 
+
+- [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory](https://arxiv.org/pdf/2504.19413)
+- [Mem0 Github Repo](https://github.com/mem0ai/mem0)
