@@ -15,23 +15,19 @@ The agentic memory system follows the Mem0 architecture with the following key c
 
 - **Vector Database**: Qdrant for semantic similarity search
 - **Embedding Model**: OpenAI text-embedding-3-small for vector representations
-- **Metadata Indexing**: Efficient filtering by user and timestamp
+- **Metadata Indexing**: filtering by user
 - **CRUD Operations**: Complete create, read, update, delete capabilities
-- **Health Monitoring**: System health checks and diagnostics
 
 ### Memory Processing Layer
 
 - **Fact Extraction**: AI-powered extraction of factual information from conversations
-- **Memory Consolidation**: Intelligent merging and updating of existing memories
+- **Memory Consolidation**: Merging and updating of existing memories
 - **Semantic Search**: Context-aware retrieval of relevant memories
-- **Error Handling**: Robust error handling and recovery mechanisms
 
 ### Memory Management Layer
 
 - **CRUD Operations**: Full create, read, update, delete capabilities
 - **Memory Actions**: ADD, UPDATE, DELETE, UNCHANGED operations
-- **User Isolation**: Multi-tenant memory storage
-- **Performance Monitoring**: Memory statistics and performance metrics
 
 ## Memory Algorithm
 
@@ -131,30 +127,12 @@ const storage = createMemoryStorage({
 await storage.initialize();
 ```
 
-## Performance Characteristics
-
-- **Embedding Size**: 1536 dimensions (OpenAI text-embedding-3-small)
-- **Distance Metric**: Cosine similarity
-- **Search Threshold**: Configurable (default: 0.3)
-- **Search Limit**: Configurable (default: 10)
-- **Indexing**: User ID and timestamp indexes for efficient filtering
-- **Error Recovery**: Automatic retry and fallback mechanisms
-- **Health Monitoring**: Real-time system status tracking
-
-## Use Cases
-
-1. **Personal AI Assistants**: Remember user preferences and context
-2. **Conversation Memory**: Maintain context across chat sessions
-3. **Task Management**: Remember user goals and preferences
-4. **Knowledge Management**: Store and retrieve relevant information
-5. **User Profiling**: Build comprehensive user profiles over time
-
 ## Testing & Examples
 
 The repository includes comprehensive examples:
 
 - **Basic Operations**: Core memory operations
-- **Memory Consolidation**: Intelligent memory merging
+- **Memory Consolidation**: Memory merging
 
 Run the examples:
 
